@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "title": "Eco-Friendly Modern Villa",
+    "slug": "eco-friendly-modern-villa",
+    "price": "Rp 3.500.000.000",
+    "location": "Dago, Bandung",
+    "image": "images/house1webp.webp",
+    "category": "Villa",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 180,
+    "tag": "Featured"
+  },
+  {
+    "id": "2",
+    "title": "Minimalist Forest House",
+    "slug": "minimalist-forest-house",
+    "price": "Rp 2.100.000.000",
+    "location": "Lembang, Bandung",
+    "image": "images/house2webp.webp",
+    "category": "House",
+    "beds": 2,
+    "baths": 2,
+    "sqft": 120,
+    "tag": "New"
+  },
+  {
+    "id": "3",
+    "title": "Urban Oasis Apartment",
+    "slug": "urban-oasis-apartment",
+    "price": "Rp 1.800.000.000",
+    "location": "Sudirman, Jakarta",
+    "image": "images/house3webp.webp",
+    "category": "Apartment",
+    "beds": 2,
+    "baths": 1,
+    "sqft": 85,
+    "tag": "Best Seller"
+  }
+]
