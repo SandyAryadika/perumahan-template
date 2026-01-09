@@ -12,14 +12,13 @@ export default function PropertyDetailClient({ property }: { property: any }) {
   const primaryGreen = "#3A4128";
   const lightGreenBg = "#F1F3EE";
 
-  // Point 4: Actionable WhatsApp CTA
-  const waNumber = "6281234567890"; // Ganti dengan nomor asli
+  
+  const waNumber = "6281234567890"; // Replace with your number
   const waMessage = `Halo RumahIn, saya tertarik dengan unit ${property.title} di ${property.location}. Bisa minta informasi lebih lanjut?`;
   const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <main className="bg-white min-h-screen pb-20">
-      {/* Header Navigation */}
       <div className="container mx-auto px-6 pt-32 pb-8 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 text-zinc-500 hover:text-zinc-900 transition-colors group">
           <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
@@ -33,7 +32,6 @@ export default function PropertyDetailClient({ property }: { property: any }) {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* Bagian Kiri: Media & Content (8 Kolom) */}
           <div className="lg:col-span-8">
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
@@ -52,7 +50,6 @@ export default function PropertyDetailClient({ property }: { property: any }) {
               </div>
             </motion.div>
 
-            {/* Point 1: Title & Floating Price Badge */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div className="flex-1">
                 <p className="text-[#3A4128] font-bold uppercase tracking-[0.3em] text-[10px] mb-2">{property.category}</p>
@@ -72,7 +69,6 @@ export default function PropertyDetailClient({ property }: { property: any }) {
               </div>
             </div>
 
-            {/* Point 2: "Edgy" Specs Grid */}
             <div className="grid grid-cols-3 gap-6 py-10 border-y border-zinc-100 mb-12">
               <div className="flex flex-col items-center gap-3 p-6 bg-[#F1F3EE] rounded-[2rem] transition-transform hover:-translate-y-1">
                 <div style={{ color: primaryGreen }}><Bed size={28} /></div>
@@ -88,7 +84,6 @@ export default function PropertyDetailClient({ property }: { property: any }) {
               </div>
             </div>
 
-            {/* Point 5: Features Section (Bento Style) */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-zinc-900 mb-8 tracking-tight">Main Facilities</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -115,12 +110,10 @@ export default function PropertyDetailClient({ property }: { property: any }) {
             </div>
           </div>
 
-          {/* Bagian Kanan: Point 3 & 4 (Sticky Sidebar) */}
           <div className="lg:col-span-4">
             <div className="sticky top-32 bg-[#F1F3EE] p-10 rounded-[3rem] border border-[#3A4128]/5 shadow-sm">
               <h4 className="text-2xl font-bold text-zinc-900 mb-6 tracking-tight">Make it Yours</h4>
               
-              {/* Point 3: Human Touch (Agent Profile) */}
               <div className="flex items-center gap-4 p-5 bg-white rounded-3xl mb-8 shadow-sm">
                 <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-inner">
                   <img src="/images/person4webp.webp" alt="Agent" />
@@ -136,7 +129,6 @@ export default function PropertyDetailClient({ property }: { property: any }) {
               </p>
               
               <div className="flex flex-col gap-4">
-                {/* Point 4: Actionable WA CTA */}
                 <a 
                   href={waLink}
                   target="_blank"

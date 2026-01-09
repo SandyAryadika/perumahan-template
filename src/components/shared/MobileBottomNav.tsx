@@ -10,7 +10,6 @@ const MobileBottomNav = ({ onSearchClick }: { onSearchClick: () => void }) => {
   const pathname = usePathname();
   const primaryGreen = "#3A4128";
 
-  // Jangan tampilkan di halaman auth agar tidak bertabrakan dengan tombol
   const authRoutes = ["/login", "/register", "/forgot-password"];
   if (authRoutes.includes(pathname)) return null;
 

@@ -6,32 +6,25 @@ import properties from "@/data/properties.json";
 import PropertyCard from "./PropertyCard";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Komponen utama dibungkus Suspense karena menggunakan useSearchParams
 const FeaturedPropertiesContent = () => {
   const searchParams = useSearchParams();
   const [filter, setFilter] = useState("All");
   
-  // Ambil parameter dari URL Hero Search
   const typeParam = searchParams.get("type");
   const locationParam = searchParams.get("location");
 
-  // Kode warna brand RumahIn
   const primaryGreen = "#3A4128";
 
-  // Daftar kategori utama
   const categories = ["All", "Villa", "House", "Apartment"];
 
-  // Efek untuk menyinkronkan filter kategori dengan pencarian Hero
   useEffect(() => {
     if (typeParam) {
-      // Mapping "Modern Villa" dari Hero ke "Villa" di filter
       if (typeParam.includes("Villa")) setFilter("Villa");
       else if (typeParam.includes("House")) setFilter("House");
       else if (typeParam.includes("Apartment")) setFilter("Apartment");
     }
   }, [typeParam]);
 
-  // Logika filter data: Kategori + Lokasi (Fuzzy Search)
   const filteredData = properties.filter((item) => {
     const matchesCategory = filter === "All" || item.category === filter;
     const matchesLocation = !locationParam || 
@@ -44,7 +37,6 @@ const FeaturedPropertiesContent = () => {
     <section id="properties" className="py-24 bg-[#FDFDFD]">
       <div className="container mx-auto px-6 max-w-7xl">
         
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-10">
           <div className="max-w-xl">
             <motion.h2 
@@ -80,7 +72,7 @@ const FeaturedPropertiesContent = () => {
           <button 
             onClick={() => {
               setFilter("All");
-              window.history.pushState({}, '', '/'); // Reset URL secara manual
+              window.history.pushState({}, '', '/');
             }}
             className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 border-b-2 border-[#3A4128] pb-1 hover:text-[#3A4128] transition-colors mb-2"
           >
@@ -88,7 +80,6 @@ const FeaturedPropertiesContent = () => {
           </button>
         </div>
 
-        {/* Grid Container */}
         <motion.div 
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[400px]"
@@ -121,7 +112,6 @@ const FeaturedPropertiesContent = () => {
   );
 };
 
-// Wrapper untuk menghindari error saat build statis
 const FeaturedProperties = () => (
   <Suspense fallback={<div className="py-24 text-center">Loading Properties...</div>}>
     <FeaturedPropertiesContent />

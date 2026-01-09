@@ -15,20 +15,18 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
   const [query, setQuery] = useState("");
   const primaryGreen = "#3A4128";
 
-  // Point: Real-time filtering dari data JSON lokal Anda
   const results = properties.filter(
     (item) =>
       item.title.toLowerCase().includes(query.toLowerCase()) ||
       item.location.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Point: Mengunci scroll body saat modal aktif untuk UX yang lebih baik
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
-      setQuery(""); // Reset query saat ditutup
+      setQuery("");
     }
   }, [isOpen]);
 
@@ -50,7 +48,6 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
             className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden border border-zinc-100"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Search Input Section */}
             <div className="p-6 md:p-8 border-b border-zinc-100 flex items-center gap-4">
               <Search className="text-zinc-400" size={22} />
               <input
@@ -69,7 +66,6 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
               </button>
             </div>
 
-            {/* Results Section */}
             <div className="max-h-[50vh] overflow-y-auto p-4 md:p-6 bg-zinc-50/50">
               {query.length > 0 ? (
                 <div className="space-y-3">
@@ -104,7 +100,6 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
                   )}
                 </div>
               ) : (
-                /* Quick Suggestions */
                 <div className="py-6 px-4">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">Pencarian Populer</p>
                   <div className="flex flex-wrap gap-3">
@@ -122,7 +117,6 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
               )}
             </div>
 
-            {/* Footer Branding */}
             <div className="p-6 bg-white border-t border-zinc-50 flex justify-between items-center">
               <div className="flex items-center gap-2 opacity-30">
                 <Home size={14} />

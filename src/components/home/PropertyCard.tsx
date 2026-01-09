@@ -21,7 +21,6 @@ const PropertyCard = ({ item, index }: PropertyProps) => {
       className="group bg-white rounded-[2rem] overflow-hidden border border-zinc-100 hover:shadow-2xl hover:shadow-zinc-200/50 transition-all duration-500"
     >
       <Link href={`/properties/${item.slug}`}>
-        {/* Image Container */}
         <div className="relative h-72 overflow-hidden">
           <motion.img
             whileHover={{ scale: 1.1 }}
@@ -30,7 +29,6 @@ const PropertyCard = ({ item, index }: PropertyProps) => {
             alt={item.title}
             className="w-full h-full object-cover"
           />
-          {/* Badge Tag */}
           <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm">
             <span style={{ color: primaryGreen }} className="text-[10px] font-bold uppercase tracking-wider">
               {item.tag}
@@ -38,7 +36,6 @@ const PropertyCard = ({ item, index }: PropertyProps) => {
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-8">
           <div className="flex justify-between items-start mb-4">
             <div>
@@ -54,7 +51,6 @@ const PropertyCard = ({ item, index }: PropertyProps) => {
             <span className="text-sm">{item.location}</span>
           </div>
 
-          {/* Specs */}
           <div className="flex justify-between items-center py-4 border-y border-zinc-50 mb-6">
             <div className="flex items-center gap-2">
               <div className="p-2 bg-zinc-50 rounded-lg text-zinc-600"><Bed size={16} /></div>

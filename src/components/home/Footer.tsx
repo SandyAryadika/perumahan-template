@@ -17,7 +17,6 @@ const Footer = () => {
   ];
 
   return (
-    // Wrapper div dengan bg-white untuk menutupi "hitam" di sudut rounded
     <div className="bg-white"> 
       <footer 
         style={{ backgroundColor: primaryGreen }} 
@@ -26,7 +25,6 @@ const Footer = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
             
-            {/* Column 1: Brand & Desc */}
             <div className="md:col-span-4">
               <Link href="/" className="flex items-center gap-2 mb-6 group">
                 <div className="bg-white p-1.5 rounded-lg">
@@ -48,7 +46,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Column 2: Discovery */}
             <div className="md:col-span-2">
               <h4 className="font-bold mb-6">Discovery</h4>
               <ul className="flex flex-col gap-4 text-zinc-400 text-sm">
@@ -60,7 +57,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3: Company - Dynamic Mapping */}
             <div className="md:col-span-2">
               <h4 className="font-bold mb-6 tracking-tight">Company</h4>
               <ul className="flex flex-col gap-4 text-zinc-400 text-sm font-medium">
@@ -70,7 +66,6 @@ const Footer = () => {
                       href={link.href} 
                       className="hover:text-white transition-all duration-300 flex items-center gap-2 group"
                     >
-                      {/* Aksen titik kecil yang muncul saat hover untuk kesan 'edgy' */}
                       <div className="w-1 h-1 rounded-full bg-[#3A4128] opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
                     </Link>
@@ -79,7 +74,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 4: Newsletter */}
             <div className="md:col-span-4">
               <h4 className="font-bold mb-6">Stay Updated</h4>
               <p className="text-zinc-400 text-sm mb-6">Dapatkan informasi terbaru mengenai proyek dan promo eksklusif.</p>
@@ -96,7 +90,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom Bar */}
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-[10px] uppercase tracking-widest">
             <p>© 2026 RumahIn. Developed within devScriptLab.</p>
             <div className="flex gap-8">

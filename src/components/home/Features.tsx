@@ -57,7 +57,6 @@ const Features = () => {
           </motion.h2>
         </div>
 
-        {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 h-auto md:h-[650px]">
           {features.map((f, i) => (
             <motion.div
@@ -68,7 +67,6 @@ const Features = () => {
               viewport={{ once: true }}
               className={`p-10 rounded-[2.5rem] flex flex-col justify-end group hover:shadow-2xl hover:shadow-zinc-200 transition-all duration-500 ${f.className}`}
             >
-              {/* Logic Background Image untuk Kartu Utama */}
               {f.image && (
                 <>
                   <img 
@@ -76,12 +74,10 @@ const Features = () => {
                     alt={f.title} 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Gradient Overlay agar teks terbaca jelas */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#3A4128]/90 via-[#3A4128]/40 to-transparent" />
                 </>
               )}
 
-              {/* Content Layer - Menggunakan relative z-10 agar di atas image */}
               <div className="relative z-10 h-full flex flex-col justify-between">
                 <div 
                   style={{ backgroundColor: f.iconBg }}

@@ -43,7 +43,6 @@ const Testimonials = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left Side: Static Content */}
           <div className="lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -63,18 +62,15 @@ const Testimonials = () => {
                 Kepercayaan Anda adalah prioritas kami. Bergabunglah dengan ratusan keluarga yang telah menemukan ketenangan hidup bersama kami.
               </p>
               
-              {/* Navigation Buttons */}
                 <div className="flex gap-4">
                   <button 
                     onClick={prevStep}
-                    // Menambahkan text-[#3A4128] agar ikon berwarna hijau sejak awal
                     className="w-14 h-14 rounded-full border border-zinc-200 flex items-center justify-center text-[#3A4128] hover:bg-[#3A4128] hover:text-white transition-all duration-500 active:scale-90"
                   >
                     <ChevronLeft size={24} />
                   </button>
                   <button 
                     onClick={nextStep}
-                    // Menambahkan text-[#3A4128] agar ikon berwarna hijau sejak awal
                     className="w-14 h-14 rounded-full border border-zinc-200 flex items-center justify-center text-[#3A4128] hover:bg-[#3A4128] hover:text-white transition-all duration-500 active:scale-90"
                   >
                     <ChevronRight size={24} />
@@ -82,8 +78,7 @@ const Testimonials = () => {
                 </div>
             </motion.div>
           </div>
-
-          {/* Right Side: Animated Testimonial Card */}
+          
           <div className="lg:col-span-7 relative h-[450px]">
             <AnimatePresence mode="wait">
               <motion.div

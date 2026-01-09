@@ -22,7 +22,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Menyembunyikan Navbar di halaman Autentikasi
   const authRoutes = ["/login", "/register", "/forgot-password"];
   if (authRoutes.includes(pathname)) {
     return null;
@@ -58,7 +57,6 @@ const Navbar = () => {
               : "bg-transparent"}
           `}
         >
-          {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div 
               style={{ backgroundColor: primaryGreen }}
@@ -71,7 +69,6 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation (Hidden on Mobile) */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -89,9 +86,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Action Buttons */}
           <div className="flex items-center gap-2 md:gap-4">
-            {/* Search - Sembunyikan di mobile karena sudah ada di Bottom Nav */}
             <button 
               onClick={() => setIsSearchOpen(true)}
               className="p-2 text-zinc-600 hover:bg-zinc-100 rounded-full transition-colors hidden md:block active:scale-90"
@@ -99,7 +94,6 @@ const Navbar = () => {
               <Search size={20} />
             </button>
             
-            {/* Sign In - Sembunyikan di mobile agar header bersih */}
             <Link
               href="/login"
               className="hidden md:block text-sm font-semibold text-zinc-900 px-4 py-2 hover:opacity-70 transition-colors"
@@ -107,7 +101,6 @@ const Navbar = () => {
               Sign In
             </Link>
             
-            {/* Get Started - PERBAIKAN: Gunakan hidden md:block agar tidak overlap logo di HP */}
             <Link
               href="#contact"
               style={{ backgroundColor: primaryGreen }}
@@ -116,7 +109,6 @@ const Navbar = () => {
               Get Started
             </Link>
 
-            {/* Mobile Hamburger Menu */}
             <button 
               className="md:hidden p-2 text-zinc-900 bg-zinc-100 rounded-xl"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -126,7 +118,6 @@ const Navbar = () => {
           </div>
         </motion.nav>
 
-        {/* Full Screen Mobile Menu Overlay */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -154,7 +145,6 @@ const Navbar = () => {
         </AnimatePresence>
       </header>
 
-      {/* Modals & Floating Nav */}
       <SearchModal 
         isOpen={isSearchOpen} 
         onClose={() => setIsSearchOpen(false)} 

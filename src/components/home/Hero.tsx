@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 const Hero = () => {
   const router = useRouter();
   
-  // State untuk menangkap input pencarian
   const [searchData, setSearchData] = useState({
     location: "",
     type: "Modern Villa",
@@ -18,13 +17,10 @@ const Hero = () => {
   const primaryGreen = "#3A4128"; 
   const lightGreenBg = "#F1F3EE";
 
-  // Fungsi untuk menangani klik tombol cari
   const handleSearch = () => {
-    // Navigasi ke section properties dengan query params (Simulasi pencarian)
     const queryString = `?location=${searchData.location}&type=${searchData.type}&budget=${searchData.budget}`;
     router.push(`/#properties${queryString}`);
     
-    // Opsional: Berikan feedback visual atau scroll ke section
     const propertiesSection = document.getElementById('properties');
     if (propertiesSection) {
       propertiesSection.scrollIntoView({ behavior: 'smooth' });
@@ -35,7 +31,6 @@ const Hero = () => {
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-[#FDFDFD]">
       <div className="container mx-auto px-6 max-w-7xl">
         
-        {/* Header Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
           <div className="lg:col-span-8">
             <motion.h1 
@@ -60,7 +55,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Hero Image Section */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -75,14 +69,12 @@ const Hero = () => {
           <div className="absolute inset-0 bg-black/5 hover:bg-transparent transition-colors duration-700" />
         </motion.div>
 
-        {/* Floating Search Bar - FUNGSI AKTIF */}
         <motion.div 
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="relative -mt-16 mx-auto max-w-5xl bg-white p-4 md:p-6 rounded-[2rem] shadow-[0_20px_50px_rgba(58,65,40,0.12)] border border-zinc-100 flex flex-col md:flex-row items-center gap-6"
         >
-          {/* Location Input */}
           <div className="flex items-center gap-4 w-full px-4 border-b md:border-b-0 md:border-r border-zinc-100 pb-4 md:pb-0">
             <div style={{ backgroundColor: lightGreenBg }} className="p-3 rounded-2xl text-[#3A4128]">
               <MapPin size={20} />
@@ -99,7 +91,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Property Type Dropdown */}
           <div className="flex items-center gap-4 w-full px-4 border-b md:border-b-0 md:border-r border-zinc-100 pb-4 md:pb-0 relative group">
             <div style={{ backgroundColor: lightGreenBg }} className="p-3 rounded-2xl text-[#3A4128]">
               <Home size={20} />
@@ -119,7 +110,6 @@ const Hero = () => {
             <ChevronDown size={14} className="absolute right-4 top-1/2 text-zinc-400 pointer-events-none" />
           </div>
 
-          {/* Budget Range Dropdown (Sekarang Interaktif) */}
           <div className="flex items-center gap-4 w-full px-4 relative">
             <div style={{ backgroundColor: lightGreenBg }} className="p-3 rounded-2xl text-[#3A4128]">
               <DollarSign size={20} />
@@ -139,7 +129,6 @@ const Hero = () => {
             <ChevronDown size={14} className="absolute right-4 top-1/2 text-zinc-400 pointer-events-none" />
           </div>
 
-          {/* Search Button */}
           <button 
             onClick={handleSearch}
             style={{ backgroundColor: primaryGreen }}
