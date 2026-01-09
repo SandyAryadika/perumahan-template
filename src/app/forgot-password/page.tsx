@@ -17,7 +17,6 @@ export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center p-6 relative">
       
-      {/* Tombol Back ke Login */}
       <div className="absolute top-10 left-6 md:top-12 md:left-12">
         <Link 
           href="/login" 
